@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/rem.css">
+</head>
+<body>
+    <h1>Organise your day with reminders</h1>
+    <div class="container" id="wrapper">
+        <div id="container">  
+            <label>Set task</label><br>
+            <input type="text" id="task" placeholder="task"><br><br>
+            <label for="Time">Set Time</label><br>
+            <input type="datetime-local" name="time" id="time"><br><br>
+            <button value="Submit" id="submit" class="button">Add reminder</button>
+            <button value="Clear" id="clear" class="button">Clear</button>
+        </div>
+    </div>
+    <div id="anime" class="anime">
+        <div id="p">Alert</div>
+    </div>
+    <div class="rem-container">
+        <h2>REMINDERS</h2>
+        <div class="rem-wrap">
+            <div class="reminders" id="pending-rem">
+                <h4>Pending</h4>
+                <ul id="pending-reminder-list"></ul>
+            </div>
+            <div class="reminders" id="completed-rem">
+                <h4>Completed</h4>
+                <ul id="completed-reminder-list"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="/javascripts/rem.js"></script>
+</body>
+</html>
