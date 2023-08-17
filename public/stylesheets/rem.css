@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: black;
+}
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: aqua;
+
+}
+h1{
+    text-align: center;
+}
+h4{
+    font-weight: 400;
+}
+#wrapper{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 15px;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    /* justify-content: center; */
+    background-color: darkcyan;
+    width: fit-content;
+}
+label{
+    font-weight: 500;
+}
+.reminders{
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+#anime{
+    padding: 5px;
+    animation-name: animater;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+#p{
+    padding: 5px;
+    color: black;
+    font-weight: 600;
+    background-color: aquamarine;
+    animation-name: pframe;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+}
+@keyframes pframe{
+    0%{
+        margin-left: 100vw;
+        margin-right: 0vw;
+    }
+    25%{
+        margin-left: 75vw;
+    }
+    50%{
+        margin-left: 50vw;
+        margin-right: 25vw;
+    }
+    75%{
+        margin-left: 25vw;
+        margin-right: 50vw;
+    }
+    100%{
+        margin-left: 0vw;
+        margin-right: 75vw;
+    }
+}
+@keyframes animater{
+    0%{
+        background-color: chartreuse;
+        color: darkblue;
+        /* margin-left: 20vw; */
+    }
+    20%{
+        color: firebrick;
+        background-color: rgb(127, 172, 255);
+    }
+    40%{
+        background-color: rgb(255, 230, 0);
+        color: rgb(20, 100, 0);
+    }
+    60%{
+        color: rgba(255, 0, 191, 0.74);
+        background-color: floralwhite;
+    }
+    80%{
+        background-color: navajowhite;
+        color: crimson;
+    }
+    100%{
+        background-color: deepskyblue;
+        color: orangered;
+    }
+}

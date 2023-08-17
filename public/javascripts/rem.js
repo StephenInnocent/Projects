@@ -2,7 +2,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const reminderInput = document.getElementById("task");
     const addButton = document.getElementById("submit");
     const timeInput = document.getElementById("time")
-    const reminderList = document.getElementById("reminder-list");
+    const pendingReminderList = document.getElementById("pending-reminder-list");
+    const completedReminderList = document.getElementById("completed-reminder-list");
+    const clearBtn = document.getElementById("clear");
+
+    clearBtn.addEventListener("click",() =>{
+        reminderInput.value =="";
+        timeInput.value ==""
+    });
 
     addButton.addEventListener("click",async function() {
         const reminderText = reminderInput.value.trim()
@@ -13,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // mySound.volume(0.2)
             // mySound.stop(3)
             const reminderItem = document.createElement("li");
+            reminderItem.textContent = display;
             console.log(timeInput.value);
             let year = Number(timeInput.value.slice(0,4));
             let month = Number(timeInput.value.slice(5,7))-1;
@@ -29,11 +37,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log(alertTime);
                 setTimeout(()=>{
                     alert(`Remenber to: ${reminderText}`);
+                    pendingReminderList.removeChild(reminderItem);
+                    completedReminderList.appendChild(reminderItem)
                 },alertTime/1000);
             };
             console.log(currentDate);
-            reminderItem.textContent = display;
-            reminderList.appendChild(reminderItem);
+            pendingReminderList.appendChild(reminderItem);
             reminderInput.value = "";
             timeInput.value="";
         }
