@@ -9,6 +9,7 @@ const adminSchema = new Schema({
         type:String,
         unique:true
     },
+    passport: String,
     password:{
         type: String,
         min: 8,
