@@ -1,6 +1,6 @@
 const {model,Schema} = require("mongoose");
 
-const userSchema = new Schema({
+const adminSchema = new Schema({
     name: {
         type: String,
         min: 4
@@ -9,15 +9,17 @@ const userSchema = new Schema({
         type:String,
         unique:true
     },
+    passport: String,
     password:{
         type: String,
         min: 8,
         select: false
     },
-    userID:{
+    AdminID:{
         type:String
     },
-    userResources: Array({
+    Reviews: Array,
+    AdminResourcess: Array({
         name:String,
         location: String,
         fileSize:String,
@@ -25,6 +27,6 @@ const userSchema = new Schema({
     })
 },{timestamps: true});
 
-const Users = model("Users",userSchema);
+const Admin = model("Admin",adminSchema);
 
-module.exports = Users;
+module.exports = Admin;
